@@ -1,0 +1,176 @@
+1: #include<iostream>
+2: using namespace std;
+3: class stack
+4: {
+5: int s[20],top,x,n;
+6: public:
+7: stack()
+8: {
+9: top=-1;
+10: cout<<"\nEnter stack size:";
+11: cin>>n;
+12: cout<<"\nEnter "<<n<<" elements:";
+13: for(int i=0;i<n;i++)
+14: {
+15: cin>>s[i];
+16: top++;
+17: }
+18: }
+19: void push();
+20: void pop();
+21: void display();
+22: void isfull();
+23: void isempty();
+24: void stacktop();
+25: void peep();
+26: };
+27: 
+28: void stack :: push()
+29: {
+30: if(top==n-1)
+31: {
+32: cout<<"\nStack is full";
+33: }
+34: else
+35: {
+36: cout<<"\nEnter X value:";
+37: cin>>x;
+38: top++;
+39: s[top]=x;
+40: }
+41: }
+42: 
+43: void stack :: pop()
+44: {
+45: if(top==-1)
+46: {
+47: cout<<"\nStack is empty";
+48: }
+49: else
+50: {
+51: cout<<s[top]<<" is deleted";
+52: top--;
+53: }
+54: }
+55: 
+56: void stack :: display()
+57: {
+58: if(top==-1)
+59: {
+60: cout<<"\nStack is empty";
+61: }
+62: else
+63: {
+64: cout<<"The elements are...\n";
+65: for(int i=0;i<=top;i++)
+66: {
+67: cout<<s[i]<<"\t";
+68: }
+69: }
+70: }
+71: 
+72: void stack :: isfull()
+73: {
+74: if(top== n-1)
+75: {
+76: cout<<"\nStack is full";
+77: }
+78: else
+79: {
+80: cout<<"\nStack is not full";
+81: }
+82: }
+83: 
+84: void stack :: isempty()
+85: {
+86: if(top==-1)
+87: {
+88: cout<<"\nStack is empty";
+89: }
+90: else
+91: {
+92: cout<<"\nStack is not empty";
+93: }
+94: }
+95: 
+96: void stack :: stacktop()
+97: {
+98: if(top==-1)
+99: {
+100: cout<<"\nStack is empty";
+101: }
+102: else
+103: {
+104: cout<<s[top];
+105: }
+106: }
+107: 
+108: void stack :: peep()
+109: {
+110: if(top==-1)
+111: {
+112: cout<<"\nStack is empty";
+113: }
+114: else
+115: {
+116: int i;
+117: cout<<"\nEnter i value:";
+118: cin>>i;
+119: if(top-i+1 >= 0)
+120: {
+121: cout<<s[top-i+1];
+122: }
+123: else
+124: {
+125: cout<<"\nUnderflow";
+126: }
+127: }
+128: }
+129: 
+130: int main()
+131: {
+132: int ch;
+133: stack ob;
+134: 
+cout<<"\n1.Push()\t2.Pop()\t3.display()\t4.isfull()\t5.isempty\t6.Stacktop()\t7.Peep()";
+135: do
+136: {
+137: cout<<"\nEnter your choice:";
+138: cin>>ch;
+139: switch(ch)
+140: {
+141: case 1:
+142: ob.push();
+143: break;
+144: case 2:
+145: ob.pop();
+146: break;
+147: case 3:
+148: ob.display();
+149: break;
+150: case 4:
+151: ob.isfull();
+152: break;
+153: case 5:
+154: ob.isempty();
+155: break;
+156: case 6:
+157: ob.stacktop();
+158: break;
+159: case 7:
+160: ob.peep();
+161: break;
+162: default:
+163: cout<<"\nInvalid choice...";
+164: }
+165: 
+}while
+(ch<=
+7
+)
+;
+166: 
+return
+ 0
+;
+167:}
